@@ -1,0 +1,48 @@
+import UIKit
+
+var greeting = "Hello, playground"
+
+/*
+                                        Contains Duplicate
+                                        Problem Statement
+ 
+ Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+ Examples
+ Example 1:
+
+ Input: nums= [1, 2, 3, 4]
+ Output: false
+ Explanation: There are no duplicates in the given array.
+ Example 2:
+
+ Input: nums= [1, 2, 3, 1]
+ Output: true
+ Explanation: '1' is repeating.
+ Example 3:
+
+ Input: nums= [3, 2, 6, -1, 2, 1]
+ Output: true
+ Explanation: '2' is repeating.
+ 
+ 
+ */
+
+func containsDuplicates(nums: [Int]) -> Bool {
+    
+    var seen = Set<Int>()
+    
+    for i in nums {
+        if seen.contains(i) {
+            return true
+        } else {
+            seen.insert(i)
+        }
+    }
+    
+    return false
+}
+
+containsDuplicates(nums: [1, 2, 3, 4])
+containsDuplicates(nums: [1, 2, 3, 1])
+containsDuplicates(nums: [3, 2, 6, -1, 2, 1])
